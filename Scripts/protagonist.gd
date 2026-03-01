@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -175.0
 
 var floating = false;
 var floated = false
+var jumped = 0 ## -1 means just jumped off left wall, 1 means right
 
 var presentAnimation : String
 
@@ -38,9 +39,16 @@ func _physics_process(delta: float) -> void:
 			holdingRope = false;
 			
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and (onFloor or floating):
-		velocity.y = JUMP_VELOCITY
-		floated = true
+	if Input.is_action_just_pressed("ui_accept") and (onFloor or floating or is_on_wall_only()):
+		if (is_on_wall_only()):
+			if (transform.x.x != jumped):
+				velocity.y = JUMP_VELOCITY
+				velocity.x += JUMP_VELOCITY/2 * transform.x.x
+				jumped = transform.x.x
+				print(jumped)
+		else:
+			velocity.y = JUMP_VELOCITY
+			floated = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -48,7 +56,9 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if (onFloor || holdingRope):
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			jumped = 0
 
 	move_and_slide()
 
