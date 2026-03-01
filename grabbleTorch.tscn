@@ -15,6 +15,7 @@ scale = Vector2(1.1447773, 1.1447773)
 texture = ExtResource("2_xcgw5")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=131600545]
+energy = 0.75
 texture = ExtResource("3_xcgw5")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1238934879]
