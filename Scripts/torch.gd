@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var burningOutCounter = 0.1
+@export var burningOutCounter = 0.01
 
 func _ready() -> void:
 	$"Burning Out".start()

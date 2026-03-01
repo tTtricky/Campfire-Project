@@ -324,7 +324,7 @@ position = Vector2(1.9999998, 0)
 scale = Vector2(1.2500001, 1.25)
 sprite_frames = SubResource("SpriteFrames_2r1on")
 animation = &"PlayerYesTorchRun"
-frame_progress = 0.81422424
+frame_progress = 0.21249717
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=146541963]
 zoom = Vector2(5, 5)
@@ -340,7 +340,7 @@ position = Vector2(5, -3)
 texture = ExtResource("9_4xlsy")
 
 [node name="Burning Out" type="Timer" parent="Torch" unique_id=1688055298]
-wait_time = 10.0
+wait_time = 0.1
 
 [node name="RopeDetector" type="Area2D" parent="." unique_id=1569276091]
 
