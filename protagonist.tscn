@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c6gkwmd0fgdqt"]
+[gd_scene format=3 uid="uid://xv7ssv0wmydp"]
 
 [ext_resource type="Script" uid="uid://dda7g1ckkixdp" path="res://Scripts/protagonist.gd" id="1_5fgat"]
 [ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="2_0if5s"]
@@ -21,7 +21,7 @@ texture = ExtResource("2_0if5s")
 zoom = Vector2(5, 5)
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=1123726032]
-wait_time = 0.4
+wait_time = 0.07
 
 [node name="Torch" type="Node2D" parent="." unique_id=558459611]
 script = ExtResource("3_u6h7k")

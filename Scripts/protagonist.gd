@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and (onFloor or floating):
 		velocity.y = JUMP_VELOCITY
+		floated = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -69,10 +70,7 @@ func handle_gravity(delta: float):
 				print("Slowly going down")
 	else:
 		floating = false;
-	if falling:
-		if (!holdingRope):
-			print("Falling")
-			velocity += get_gravity() * delta;
+		floated = false
 
 
 func _on_coyote_timer_timeout() -> void:
@@ -97,5 +95,5 @@ func _on_rope_detector_area_exited(area: Area2D) -> void:
 	if area in get_tree().get_nodes_in_group("Rope"):
 		print(" and left")
 		inRope = false;
-		falling = !is_on_floor()
+		floated = !is_on_floor()
 		holdingRope = false
