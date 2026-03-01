@@ -1,12 +1,126 @@
-[gd_scene format=3 uid="uid://cnw4dksdib1aq"]
+[gd_scene format=3 uid="uid://fucptyl1lkll"]
 
-[ext_resource type="Script" uid="uid://5j6axw2k840x" path="res://monster.gd" id="1_ssiii"]
-[ext_resource type="Script" uid="uid://bb8l8n1jggas5" path="res://character_body_2d.gd" id="2_qheve"]
+[ext_resource type="Script" path="res://monster.gd" id="1_ssiii"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="2_qheve"]
+[ext_resource type="Texture2D" uid="uid://b2vusp32pamf8" path="res://Assests/MonsterIGuess.png" id="3_qheve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eupxk"]
 size = Vector2(15.58989, 16.46988)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ueu8u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alqpt"]
+atlas = ExtResource("3_qheve")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6pda"]
+atlas = ExtResource("3_qheve")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c87ny"]
+atlas = ExtResource("3_qheve")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0p7j"]
+atlas = ExtResource("3_qheve")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yljlq"]
+atlas = ExtResource("3_qheve")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5p4p"]
+atlas = ExtResource("3_qheve")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brn83"]
+atlas = ExtResource("3_qheve")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4andq"]
+atlas = ExtResource("3_qheve")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5dh7"]
+atlas = ExtResource("3_qheve")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxtlc"]
+atlas = ExtResource("3_qheve")
+region = Rect2(288, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bw7w"]
+atlas = ExtResource("3_qheve")
+region = Rect2(320, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsh87"]
+atlas = ExtResource("3_qheve")
+region = Rect2(352, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83iio"]
+atlas = ExtResource("3_qheve")
+region = Rect2(384, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjp0q"]
+atlas = ExtResource("3_qheve")
+region = Rect2(416, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_282i8"]
+atlas = ExtResource("3_qheve")
+region = Rect2(448, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eupxk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alqpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6pda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c87ny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0p7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yljlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5p4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brn83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4andq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5dh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxtlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bw7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsh87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83iio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjp0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_282i8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Monster" type="Node2D" unique_id=508455538]
 script = ExtResource("1_ssiii")
@@ -21,5 +135,11 @@ shape = SubResource("RectangleShape2D_eupxk")
 position = Vector2(9.536743e-07, 0)
 scale = Vector2(20.03826, 19.613808)
 texture = SubResource("PlaceholderTexture2D_ueu8u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Monster body/Monster sprite" unique_id=488252497]
+position = Vector2(1.1920929e-07, 0.8157519)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_eupxk")
+autoplay = "default"
 
 [node name="Monster navigator" type="NavigationAgent2D" parent="Monster body" unique_id=2043197611]

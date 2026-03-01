@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://14cg0njwc8qi"]
 
-[ext_resource type="PackedScene" uid="uid://xv7ssv0wmydp" path="res://protagonist.tscn" id="1_r4pny"]
+[ext_resource type="Script" uid="uid://dda7g1ckkixdp" path="res://Scripts/protagonist.gd" id="1_yg2w3"]
+[ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="2_wl7ka"]
+[ext_resource type="Script" path="res://Scripts/torch.gd" id="3_lx1al"]
 [ext_resource type="Texture2D" uid="uid://stx1np47k227" path="res://SnowTilemap .png" id="3_wl7ka"]
-[ext_resource type="PackedScene" path="res://Monster.tscn" id="4_lx1al"]
-[ext_resource type="PackedScene" uid="uid://bl05ntwtwr7vr" path="res://grabbleTorch.tscn" id="5_r4pny"]
-[ext_resource type="PackedScene" uid="uid://tvvvxpnl1pfe" path="res://rope.tscn" id="6_5f4ac"]
+[ext_resource type="PackedScene" uid="uid://fucptyl1lkll" path="res://Monster.tscn" id="4_lx1al"]
+[ext_resource type="PackedScene" path="res://grabbleTorch.tscn" id="5_r4pny"]
+[ext_resource type="PackedScene" path="res://rope.tscn" id="6_5f4ac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx1al"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4pny"]
 texture = ExtResource("3_wl7ka")
@@ -240,11 +244,13 @@ position = Vector2(78, 11)
 position = Vector2(113, 19)
 
 [node name="Monster" parent="." unique_id=508455538 instance=ExtResource("4_lx1al")]
-position = Vector2(-92, -40)
+position = Vector2(-147, -49)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Monster" unique_id=103822507]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_cxlks")
 enabled = false
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="Monster" unique_id=111728210]
+position = Vector2(0, 3)
 navigation_polygon = SubResource("NavigationPolygon_2b24p")
