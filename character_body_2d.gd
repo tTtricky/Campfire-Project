@@ -5,7 +5,7 @@ var movement_speed: float = 50.0
 
 var movement_target_position: Vector2
 
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var navigation_agent: NavigationAgent2D = $"Monster navigator"
 
 func _ready():
 	# These values need to be adjusted for the actor's speed
