@@ -38,5 +38,12 @@ texture = ExtResource("2_0if5s")
 [node name="Burning Out" type="Timer" parent="Torch" unique_id=1688055298]
 wait_time = 10.0
 
+[node name="RopeDetector" type="Area2D" parent="." unique_id=1569276091]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeDetector" unique_id=308488639]
+shape = SubResource("RectangleShape2D_lx1al")
+
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="Torch/Burning Out" to="Torch" method="_on_burning_out_timeout"]
+[connection signal="area_entered" from="RopeDetector" to="." method="_on_rope_detector_area_entered"]
+[connection signal="area_exited" from="RopeDetector" to="." method="_on_rope_detector_area_exited"]

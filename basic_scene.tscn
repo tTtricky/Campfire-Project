@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://14cg0njwc8qi"]
 
-[ext_resource type="Script" uid="uid://dda7g1ckkixdp" path="res://Scripts/protagonist.gd" id="1_yg2w3"]
-[ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="2_wl7ka"]
-[ext_resource type="Script" uid="uid://bsnyq2gv27xg6" path="res://Scripts/torch.gd" id="3_lx1al"]
+[ext_resource type="PackedScene" uid="uid://c6gkwmd0fgdqt" path="res://protagonist.tscn" id="1_r4pny"]
 [ext_resource type="Texture2D" uid="uid://stx1np47k227" path="res://SnowTilemap .png" id="3_wl7ka"]
-[ext_resource type="PackedScene" uid="uid://cnw4dksdib1aq" path="res://Monster.tscn" id="4_lx1al"]
-[ext_resource type="PackedScene" path="res://grabbleTorch.tscn" id="5_r4pny"]
-[ext_resource type="PackedScene" path="res://rope.tscn" id="6_5f4ac"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx1al"]
+[ext_resource type="PackedScene" path="res://Monster.tscn" id="4_lx1al"]
+[ext_resource type="PackedScene" uid="uid://bl05ntwtwr7vr" path="res://grabbleTorch.tscn" id="5_r4pny"]
+[ext_resource type="PackedScene" uid="uid://tvvvxpnl1pfe" path="res://rope.tscn" id="6_5f4ac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4pny"]
 texture = ExtResource("3_wl7ka")
@@ -226,37 +222,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(127, -8, 156, -8, 155, 
 
 [node name="Basic Scene" type="Node2D" unique_id=818341803]
 
-[node name="Protagonist" type="CharacterBody2D" parent="." unique_id=735102481 groups=["Protagonist"]]
-script = ExtResource("1_yg2w3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonist" unique_id=1152469911]
-shape = SubResource("RectangleShape2D_lx1al")
-
-[node name="Sprite2D" type="Sprite2D" parent="Protagonist" unique_id=357293128]
-position = Vector2(0, -0.25)
-scale = Vector2(0.15624997, 0.15234375)
-texture = ExtResource("2_wl7ka")
-
-[node name="Camera2D" type="Camera2D" parent="Protagonist" unique_id=68540043]
-zoom = Vector2(5, 5)
-
-[node name="CoyoteTimer" type="Timer" parent="Protagonist" unique_id=496134739]
-wait_time = 0.4
-
-[node name="Torch" type="Node2D" parent="Protagonist" unique_id=533646459]
-script = ExtResource("3_lx1al")
-
-[node name="PointLight2D" type="PointLight2D" parent="Protagonist/Torch" unique_id=953205533]
-position = Vector2(13, -10)
-texture = ExtResource("2_wl7ka")
-
-[node name="Sprite2D" type="Sprite2D" parent="Protagonist/Torch" unique_id=18007883]
-position = Vector2(13, -11)
-scale = Vector2(0.046874996, 0.046874996)
-texture = ExtResource("2_wl7ka")
-
-[node name="Burning Out" type="Timer" parent="Protagonist/Torch" unique_id=1852152662]
-wait_time = 10.0
+[node name="Protagonist" parent="." unique_id=2114517761 instance=ExtResource("1_r4pny")]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1122482099]
 tile_set = SubResource("TileSet_5f4ac")
@@ -271,7 +237,7 @@ position = Vector2(78, 11)
 
 [node name="Rope" parent="." unique_id=1184049864 node_paths=PackedStringArray("player") instance=ExtResource("6_5f4ac")]
 position = Vector2(113, 19)
-player = NodePath("../Protagonist")
+player = NodePath("")
 
 [node name="Monster" parent="." unique_id=508455538 instance=ExtResource("4_lx1al")]
 position = Vector2(-92, -40)
@@ -282,6 +248,3 @@ enabled = false
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="Monster" unique_id=111728210]
 navigation_polygon = SubResource("NavigationPolygon_2b24p")
-
-[connection signal="timeout" from="Protagonist/CoyoteTimer" to="Protagonist" method="_on_coyote_timer_timeout"]
-[connection signal="timeout" from="Protagonist/Torch/Burning Out" to="Protagonist/Torch" method="_on_burning_out_timeout"]
