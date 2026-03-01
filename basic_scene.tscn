@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dda7g1ckkixdp" path="res://protagonist.gd" id="1_yg2w3"]
 [ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="2_wl7ka"]
+[ext_resource type="Script" uid="uid://bsnyq2gv27xg6" path="res://torch.gd" id="3_lx1al"]
 [ext_resource type="Texture2D" uid="uid://stx1np47k227" path="res://SnowTilemap .png" id="3_wl7ka"]
+[ext_resource type="PackedScene" uid="uid://bl05ntwtwr7vr" path="res://grabbleTorch.tscn" id="5_r4pny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lx1al"]
 
@@ -212,7 +214,7 @@ sources/0 = SubResource("TileSetAtlasSource_r4pny")
 
 [node name="Basic Scene" type="Node2D" unique_id=818341803]
 
-[node name="Protagonist" type="CharacterBody2D" parent="." unique_id=735102481]
+[node name="Protagonist" type="CharacterBody2D" parent="." unique_id=735102481 groups=["Protagonist"]]
 script = ExtResource("1_yg2w3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Protagonist" unique_id=1152469911]
@@ -229,9 +231,31 @@ zoom = Vector2(5, 5)
 [node name="CoyoteTimer" type="Timer" parent="Protagonist" unique_id=496134739]
 wait_time = 0.4
 
+[node name="Torch" type="Node2D" parent="Protagonist" unique_id=533646459]
+script = ExtResource("3_lx1al")
+
+[node name="PointLight2D" type="PointLight2D" parent="Protagonist/Torch" unique_id=953205533]
+position = Vector2(13, -10)
+texture = ExtResource("2_wl7ka")
+
+[node name="Sprite2D" type="Sprite2D" parent="Protagonist/Torch" unique_id=18007883]
+position = Vector2(13, -11)
+scale = Vector2(0.046874996, 0.046874996)
+texture = ExtResource("2_wl7ka")
+
+[node name="Burning Out" type="Timer" parent="Protagonist/Torch" unique_id=1852152662]
+wait_time = 10.0
+
 [node name="TileMap" type="TileMap" parent="." unique_id=1122482099]
 tile_set = SubResource("TileSet_5f4ac")
 format = 2
-layer_0/tile_data = PackedInt32Array(131070, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0)
+layer_0/tile_data = PackedInt32Array(131070, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1836415780]
+color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+
+[node name="GrabbleTorch" parent="." unique_id=1143973062 instance=ExtResource("5_r4pny")]
+position = Vector2(78, 11)
 
 [connection signal="timeout" from="Protagonist/CoyoteTimer" to="Protagonist" method="_on_coyote_timer_timeout"]
+[connection signal="timeout" from="Protagonist/Torch/Burning Out" to="Protagonist/Torch" method="_on_burning_out_timeout"]

@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -175.0
 var falling = true;
 var floating = false;
 
+var hasTorch = true;
+
 func _physics_process(delta: float) -> void:
 	
 	handle_gravity(delta);
@@ -42,3 +44,7 @@ func handle_gravity(delta: float):
 
 func _on_coyote_timer_timeout() -> void:
 	falling = true;
+
+func gainTorch(energy: float):
+	$Torch/PointLight2D.energy = energy
+	$"Torch/Burning Out".start()

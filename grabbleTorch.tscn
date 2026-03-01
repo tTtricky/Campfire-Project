@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bl05ntwtwr7vr"]
+
+[ext_resource type="Script" uid="uid://cu0h44244qg20" path="res://grabble_torch.gd" id="1_6i2dm"]
+[ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="1_bvkyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcgw5"]
+size = Vector2(22.421871, 22.109371)
+
+[node name="GrabbleTorch" type="Node2D" unique_id=1143973062]
+script = ExtResource("1_6i2dm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=142181520]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_bvkyf")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=131600545]
+texture = ExtResource("1_bvkyf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1238934879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2088935701]
+position = Vector2(-0.0007853545, -0.013286117)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_xcgw5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
