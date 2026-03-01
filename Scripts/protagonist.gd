@@ -97,9 +97,20 @@ func _on_rope_detector_area_exited(area: Area2D) -> void:
 		inRope = false;
 		floated = !is_on_floor()
 		holdingRope = false
+		
+func checkDirection():
+	if velocity.x > 0:
+		transform.x = Vector2(1,0)
+	if (velocity.x < 0):
+		transform.x = Vector2(-1,0);
 
 func _process(delta: float):
-	if (is_on_floor() && velocity.x != 0 && !$Sprite2D.is_playing()):
-		$Sprite2D.play("PlayerNoTorchRun")
-	else: 
-		$Sprite2D.set_frame_and_progress(0,0.0);
+	if (is_on_floor() && velocity.x != 0):
+			if (!$Sprite2D.is_playing()):
+				$Sprite2D.play("PlayerNoTorchRun")
+	else:
+		if (is_on_floor()):
+			$Sprite2D.set_frame_and_progress(0,0.0);
+		else: 
+			$Sprite2D.set_frame_and_progress(3,0.0);
+	checkDirection()

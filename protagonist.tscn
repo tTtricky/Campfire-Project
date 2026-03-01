@@ -71,15 +71,11 @@ zoom = Vector2(5, 5)
 wait_time = 0.07
 
 [node name="Torch" type="Node2D" parent="." unique_id=558459611]
+position = Vector2(-7.29, 10.27)
 script = ExtResource("3_u6h7k")
 
 [node name="PointLight2D" type="PointLight2D" parent="Torch" unique_id=1080546604]
 position = Vector2(13, -10)
-texture = ExtResource("2_0if5s")
-
-[node name="Sprite2D" type="Sprite2D" parent="Torch" unique_id=413114333]
-position = Vector2(13, -11)
-scale = Vector2(0.046874996, 0.046874996)
 texture = ExtResource("2_0if5s")
 
 [node name="Burning Out" type="Timer" parent="Torch" unique_id=1688055298]
