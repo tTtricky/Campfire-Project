@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chih46bls5lsc"
-valid=false
+uid="uid://dkb43mj85hvma"
+path="res://.godot/imported/PlayerJumpset.png-6864ed7e6a6328d8a77a860663583a5a.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Assests/pixil-frame-0.png"
+source_file="res://Assests/PlayerJumpset.png"
+dest_files=["res://.godot/imported/PlayerJumpset.png-6864ed7e6a6328d8a77a860663583a5a.ctex"]
 
 [params]
 
