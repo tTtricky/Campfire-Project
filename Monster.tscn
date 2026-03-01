@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://fucptyl1lkll"]
+[gd_scene format=3 uid="uid://cnw4dksdib1aq"]
 
 [ext_resource type="Script" uid="uid://5j6axw2k840x" path="res://monster.gd" id="1_ssiii"]
 [ext_resource type="Script" uid="uid://bb8l8n1jggas5" path="res://character_body_2d.gd" id="2_qheve"]
 [ext_resource type="Texture2D" uid="uid://srgkne8dv1jl" path="res://Assests/MonsterIGuess.png" id="3_qheve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eupxk"]
-size = Vector2(15.58989, 16.46988)
+size = Vector2(350, 925)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qheve"]
 atlas = ExtResource("3_qheve")

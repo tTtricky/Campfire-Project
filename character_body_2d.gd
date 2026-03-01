@@ -10,7 +10,7 @@ var movement_target_position: Vector2
 func _ready():
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
-	navigation_agent.path_desired_distance = 4.0
+	navigation_agent.path_desired_distance = 1.0
 	navigation_agent.target_desired_distance = 4.0
 	
 	movement_target_position = Vector2($"../../Protagonist".position.x, $"../../Protagonist".position.y)

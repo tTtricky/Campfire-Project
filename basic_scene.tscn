@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://xv7ssv0wmydp" path="res://protagonist.tscn" id="1_r4pny"]
 [ext_resource type="Texture2D" uid="uid://stx1np47k227" path="res://SnowTilemap .png" id="3_wl7ka"]
-[ext_resource type="PackedScene" uid="uid://fucptyl1lkll" path="res://Monster.tscn" id="4_lx1al"]
-[ext_resource type="PackedScene" uid="uid://bl05ntwtwr7vr" path="res://grabbleTorch.tscn" id="5_r4pny"]
+[ext_resource type="PackedScene" uid="uid://cnw4dksdib1aq" path="res://Monster.tscn" id="4_lx1al"]
+[ext_resource type="PackedScene" path="res://grabbleTorch.tscn" id="5_r4pny"]
 [ext_resource type="PackedScene" uid="uid://tvvvxpnl1pfe" path="res://rope.tscn" id="6_5f4ac"]
 [ext_resource type="Texture2D" uid="uid://crtiki0tsmcmq" path="res://Assests/Mountains.png" id="6_cxlks"]
 
@@ -212,14 +212,22 @@ terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_r4pny")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cxlks"]
-vertices = PackedVector2Array(2, 14, 2, 28.546875, -35.601563, 23.453125, -26.390625, -38, 172.21875, -38, 170.71875, -18, 82, -18, 70, 14, 82, 18, 70, 46, 214, 46, 303.28125, 18, 373.21094, 189.25781, 342, 189.8125, 342, 174, 214, 174)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 13, 14), PackedInt32Array(11, 12, 14), PackedInt32Array(11, 14, 15, 10)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-35, -48, -47, 32, 12, 40, 12, 24, 60, 24, 60, 56, 204, 56, 204, 184, 332, 184, 332, 200, 388, 199, 310, 8, 92, 8, 92, -8, 180, -8, 183, -48)])
+vertices = PackedVector2Array(-3, 9, -3, 22.828125, -32.210938, 18.867188, -33.75, -73.50781, 166.63281, -80.46094, 77, -23, 372.7578, 184.25781, 347, 184.71875, 347, 169, 370.22656, 22.046875, 219, 169, 219, 80, 247, 80, 247, 38, 77, 23.046875, 200, 38, 196, 41, 75, 41, 75, 9, 165.32813, -23)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(8, 10, 11, 12), PackedInt32Array(9, 8, 12, 13), PackedInt32Array(14, 9, 13, 15), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(14, 17, 18, 5), PackedInt32Array(4, 19, 5), PackedInt32Array(0, 5, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-49.00004, -88.00006, -47, 32, 12, 40, 12, 24, 60, 24, 60, 56, 201.00015, 56.000042, 205.00015, 53.00004, 232.00018, 53.00004, 232.00018, 65.000046, 204.00015, 65.000046, 204, 184, 332, 184, 332, 200, 388, 199, 385.00027, 7.0000076, 92, 8, 92, -8, 180, -8, 182.00012, -96.00006)])
+agent_radius = 15.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5f4ac"]
+vertices = PackedVector2Array(8736.109, 170, 8748.8125, 932.34375, 4857.758, 956.65625, 4355, 170, 3581.9219, -2228.3984, 8850.297, -2206.539, 8834.648, -970, 4355, -970, 3633.9375, -580.9297, 4270, -555.5, 4270, 1030, 4833.3203, 1030)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 4, 7, 9), PackedInt32Array(9, 7, 3, 10), PackedInt32Array(10, 3, 2, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(3275, -225, 3900, -200, 3900, 1400, 5100, 1400, 5125, 1325, 9125, 1300, 9100, -200, 4725, -200, 4725, -600, 9200, -600, 9225, -2575, 3200, -2600)])
+agent_radius = 370.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2b24p"]
-vertices = PackedVector2Array(145.60938, -64.078125, 318.14844, -65.859375, 297.1875, 18, 166.28125, -18, 138.63281, -18, 165.28125, 18)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0), PackedInt32Array(3, 2, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(127, -8, 156, -8, 155, 28, 305, 28, 331, -76, 137, -74)])
+vertices = PackedVector2Array(9243.859, -1328.8594, 9015.273, 975.9922, 5514.422, 934.3125, 5476.1016, -1556.5781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(5100, -1950, 9650, -1675, 9350, 1350, 5150, 1300)])
+agent_radius = 370.0
 
 [node name="Basic Scene" type="Node2D" unique_id=818341803]
 
@@ -244,10 +252,16 @@ position = Vector2(113, 19)
 position = Vector2(-92, -40)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Monster" unique_id=103822507]
+position = Vector2(5.722046e-06, 3.8146973e-06)
+scale = Vector2(24.99998, 24.99998)
 navigation_polygon = SubResource("NavigationPolygon_cxlks")
-enabled = false
 
-[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="Monster" unique_id=111728210]
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="Monster" unique_id=333405211]
+position = Vector2(-25, 0)
+navigation_polygon = SubResource("NavigationPolygon_5f4ac")
+
+[node name="NavigationRegion2D3" type="NavigationRegion2D" parent="Monster" unique_id=836243756]
+position = Vector2(25, -650)
 navigation_polygon = SubResource("NavigationPolygon_2b24p")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1691548659]
