@@ -215,14 +215,14 @@ terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_r4pny")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cxlks"]
-vertices = PackedVector2Array(2, 14, 2, 28.546875, -35.601563, 23.453125, -26.390625, -38, 172.21875, -38, 170.71875, -18, 82, -18, 69.6875, 14, 82, 18, 70.703125, 46, 214, 46, 303.28125, 18, 373.21094, 189.25781, 342, 189.8125, 342, 174, 214, 174)
+vertices = PackedVector2Array(2, 14, 2, 28.546875, -35.601563, 23.453125, -26.390625, -38, 172.21875, -38, 170.71875, -18, 82, -18, 70, 14, 82, 18, 70, 46, 214, 46, 303.28125, 18, 373.21094, 189.25781, 342, 189.8125, 342, 174, 214, 174)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 13, 14), PackedInt32Array(11, 12, 14), PackedInt32Array(11, 14, 15, 10)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-35, -48, -47, 32, 12, 40, 12, 24, 60, 24, 61, 56, 204, 56, 204, 184, 332, 184, 332, 200, 388, 199, 310, 8, 92, 8, 92, -8, 180, -8, 183, -48)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-35, -48, -47, 32, 12, 40, 12, 24, 60, 24, 60, 56, 204, 56, 204, 184, 332, 184, 332, 200, 388, 199, 310, 8, 92, 8, 92, -8, 180, -8, 183, -48)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2b24p"]
-vertices = PackedVector2Array(166, -18, 138.63281, -18, 145.60938, -64.078125, 319.89844, -65.88281, 309.97656, 30.828125, 166, 28.179688)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(127, -8, 156, -8, 156, 38, 319, 41, 331, -76, 137, -74)])
+vertices = PackedVector2Array(145.60938, -64.078125, 318.14844, -65.859375, 297.1875, 18, 166.28125, -18, 138.63281, -18, 165.28125, 18)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0), PackedInt32Array(3, 2, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(127, -8, 156, -8, 155, 28, 305, 28, 331, -76, 137, -74)])
 
 [node name="Basic Scene" type="Node2D" unique_id=818341803]
 
@@ -278,6 +278,7 @@ position = Vector2(-92, -40)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Monster" unique_id=103822507]
 navigation_polygon = SubResource("NavigationPolygon_cxlks")
+enabled = false
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="Monster" unique_id=111728210]
 navigation_polygon = SubResource("NavigationPolygon_2b24p")
