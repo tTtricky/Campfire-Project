@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://xv7ssv0wmydp" path="res://protagonist.tscn" id="1_r4pny"]
 [ext_resource type="Texture2D" uid="uid://stx1np47k227" path="res://SnowTilemap .png" id="3_wl7ka"]
-[ext_resource type="PackedScene" path="res://Monster.tscn" id="4_lx1al"]
+[ext_resource type="PackedScene" uid="uid://fucptyl1lkll" path="res://Monster.tscn" id="4_lx1al"]
 [ext_resource type="PackedScene" uid="uid://bl05ntwtwr7vr" path="res://grabbleTorch.tscn" id="5_r4pny"]
 [ext_resource type="PackedScene" uid="uid://tvvvxpnl1pfe" path="res://rope.tscn" id="6_5f4ac"]
+[ext_resource type="Texture2D" uid="uid://crtiki0tsmcmq" path="res://Assests/Mountains.png" id="6_cxlks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4pny"]
 texture = ExtResource("3_wl7ka")
@@ -248,3 +249,12 @@ enabled = false
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="Monster" unique_id=111728210]
 navigation_polygon = SubResource("NavigationPolygon_2b24p")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1691548659]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=994719476]
+visible = false
+z_index = -1
+position = Vector2(33, 39)
+texture = ExtResource("6_cxlks")
