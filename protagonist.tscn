@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c6gkwmd0fgdqt"]
+
+[ext_resource type="Script" uid="uid://dda7g1ckkixdp" path="res://Scripts/protagonist.gd" id="1_5fgat"]
+[ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="2_0if5s"]
+[ext_resource type="Script" uid="uid://bsnyq2gv27xg6" path="res://Scripts/torch.gd" id="3_u6h7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx1al"]
+
+[node name="Protagonist" type="CharacterBody2D" unique_id=2114517761 groups=["Protagonist"]]
+script = ExtResource("1_5fgat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1910814523]
+shape = SubResource("RectangleShape2D_lx1al")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1578480061]
+position = Vector2(0, -0.25)
+scale = Vector2(0.15624997, 0.15234375)
+texture = ExtResource("2_0if5s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=146541963]
+zoom = Vector2(5, 5)
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1123726032]
+wait_time = 0.4
+
+[node name="Torch" type="Node2D" parent="." unique_id=558459611]
+script = ExtResource("3_u6h7k")
+
+[node name="PointLight2D" type="PointLight2D" parent="Torch" unique_id=1080546604]
+position = Vector2(13, -10)
+texture = ExtResource("2_0if5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Torch" unique_id=413114333]
+position = Vector2(13, -11)
+scale = Vector2(0.046874996, 0.046874996)
+texture = ExtResource("2_0if5s")
+
+[node name="Burning Out" type="Timer" parent="Torch" unique_id=1688055298]
+wait_time = 10.0
+
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="timeout" from="Torch/Burning Out" to="Torch" method="_on_burning_out_timeout"]

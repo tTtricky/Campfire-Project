@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crdg2thu5y3ii"
-path="res://.godot/imported/pixil-frame-0.png-fa0f5873657c14a7b680b1126f024b27.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://chih46bls5lsc"
+valid=false
 
 [deps]
 
 source_file="res://Assests/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-fa0f5873657c14a7b680b1126f024b27.ctex"]
 
 [params]
 
