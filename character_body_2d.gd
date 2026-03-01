@@ -41,3 +41,4 @@ func _physics_process(delta):
 func _process(delta: float) -> void:
 	movement_target_position = Vector2($"../../Protagonist".position.x, $"../../Protagonist".position.y)
 	set_movement_target(movement_target_position)
+	movement_speed = 50 * (1 - 0.5 * $"../../Protagonist/Torch/PointLight2D".energy)
