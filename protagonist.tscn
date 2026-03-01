@@ -316,12 +316,11 @@ _data = {
 script = ExtResource("1_5fgat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1910814523]
-position = Vector2(-2.51, 0)
 scale = Vector2(0.63, 1)
 shape = SubResource("RectangleShape2D_lx1al")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1621687732]
-position = Vector2(-4.7683716e-07, 0)
+position = Vector2(1.9999998, 0)
 scale = Vector2(1.2500001, 1.25)
 sprite_frames = SubResource("SpriteFrames_2r1on")
 animation = &"PlayerJump"
@@ -336,6 +335,7 @@ wait_time = 0.07
 script = ExtResource("3_u6h7k")
 
 [node name="PointLight2D" type="PointLight2D" parent="Torch" unique_id=1080546604]
+position = Vector2(5, -3)
 texture = ExtResource("2_0if5s")
 
 [node name="Burning Out" type="Timer" parent="Torch" unique_id=1688055298]
@@ -344,7 +344,6 @@ wait_time = 10.0
 [node name="RopeDetector" type="Area2D" parent="." unique_id=1569276091]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RopeDetector" unique_id=308488639]
-position = Vector2(-2.51, 0)
 scale = Vector2(0.63, 1)
 shape = SubResource("RectangleShape2D_lx1al")
 
