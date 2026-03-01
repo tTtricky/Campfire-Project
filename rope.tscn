@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://tvvvxpnl1pfe"]
+
+[ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="1_0756u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmccy"]
+size = Vector2(20, 10)
+
+[node name="Rope" type="Node2D" unique_id=1184049864]
+
+[node name="Hook" type="StaticBody2D" parent="." unique_id=540628053]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook" unique_id=343338483]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_nmccy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hook" unique_id=1383125233]
+position = Vector2(9.999998, 0)
+scale = Vector2(0.15625001, 0.078125015)
+texture = ExtResource("1_0756u")
+
+[node name="Line" type="Area2D" parent="." unique_id=1262561728]
+position = Vector2(4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Line" unique_id=1706658008]
+position = Vector2(18.2, 59)
+scale = Vector2(0.05, 1)
+shape = SubResource("RectangleShape2D_nmccy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Line" unique_id=2090519975]
+position = Vector2(18.2, 59)
+scale = Vector2(0.05, 1)
+texture = ExtResource("1_0756u")

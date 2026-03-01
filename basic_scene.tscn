@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://14cg0njwc8qi"]
 
-[ext_resource type="Script" uid="uid://dda7g1ckkixdp" path="res://protagonist.gd" id="1_yg2w3"]
+[ext_resource type="Script" uid="uid://dda7g1ckkixdp" path="res://Scripts/protagonist.gd" id="1_yg2w3"]
 [ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="2_wl7ka"]
-[ext_resource type="Script" path="res://torch.gd" id="3_lx1al"]
+[ext_resource type="Script" uid="uid://bsnyq2gv27xg6" path="res://Scripts/torch.gd" id="3_lx1al"]
 [ext_resource type="Texture2D" uid="uid://stx1np47k227" path="res://SnowTilemap .png" id="3_wl7ka"]
-[ext_resource type="PackedScene" uid="uid://cnw4dksdib1aq" path="res://Monster.tscn" id="4_lx1al"]
-[ext_resource type="PackedScene" path="res://grabbleTorch.tscn" id="5_r4pny"]
+[ext_resource type="PackedScene" uid="uid://bl05ntwtwr7vr" path="res://grabbleTorch.tscn" id="5_r4pny"]
+[ext_resource type="PackedScene" uid="uid://tvvvxpnl1pfe" path="res://rope.tscn" id="6_5f4ac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lx1al"]
 
@@ -290,11 +290,8 @@ navigation_polygon = SubResource("NavigationPolygon_2b24p")
 [node name="GrabbleTorch" parent="Node2" unique_id=1143973062 instance=ExtResource("5_r4pny")]
 position = Vector2(78, 11)
 
-[node name="GrabbleTorch2" parent="Node2" unique_id=2049453828 instance=ExtResource("5_r4pny")]
-position = Vector2(183, -20)
-
-[node name="GrabbleTorch3" parent="Node2" unique_id=435558430 instance=ExtResource("5_r4pny")]
-position = Vector2(267, 73)
+[node name="Rope" parent="." unique_id=1184049864 instance=ExtResource("6_5f4ac")]
+position = Vector2(113, 19)
 
 [connection signal="timeout" from="Protagonist/CoyoteTimer" to="Protagonist" method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="Protagonist/Torch/Burning Out" to="Protagonist/Torch" method="_on_burning_out_timeout"]

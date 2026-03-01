@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl05ntwtwr7vr"]
 
-[ext_resource type="Script" uid="uid://cu0h44244qg20" path="res://grabble_torch.gd" id="1_6i2dm"]
+[ext_resource type="Script" uid="uid://cu0h44244qg20" path="res://Scripts/grabble_torch.gd" id="1_6i2dm"]
 [ext_resource type="Texture2D" uid="uid://boyq4ujj5p2w" path="res://icon.svg" id="1_bvkyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcgw5"]
